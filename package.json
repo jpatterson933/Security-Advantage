@@ -1,0 +1,25 @@
+{
+  "name": "security-advantage",
+  "version": "1.0.0",
+  "description": "This is an application that will utilize Alpha Advantage API that will allow a user to learn about company that they may want to invest in.",
+  "main": "index.js",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "init": "^0.1.2",
+    "requirejs": "^2.3.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpatterson933/Security-Advantage.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jpatterson933/Security-Advantage/issues"
+  },
+  "homepage": "https://github.com/jpatterson933/Security-Advantage#readme"
+}
