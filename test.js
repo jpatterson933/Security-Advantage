@@ -2,4 +2,4 @@
 
 const ticker = $("#ticker").val();
 
-console.log(ticker)
+// console.log(ticker)

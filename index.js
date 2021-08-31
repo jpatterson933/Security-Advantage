@@ -1,23 +1,3 @@
-
-
-fetch("https://alpha-vantage.p.rapidapi.com/query?function=OVERVIEW&symbol=MSFT&datatype=json&output_size=compact", {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "alpha-vantage.p.rapidapi.com",
-		"x-rapidapi-key": config
-	}
-})
-	.then(response => {
-		console.log(response);
-		return response.json();
-	})
-	.then(data => {
-		console.log(data)
-	})
-	.catch(err => {
-		console.error(err);
-	});
-
 // our fetch query function
 const getCompanyDescription = (dropdownSelection) => {
 	const baseUrl = "https://alpha-vantage.p.rapidapi.com/query?function=OVERVIEW&symbol=";
@@ -42,6 +22,20 @@ $("#ticker-choice").on("click", (e) => {
 	})
 	.then(data => {
 		console.log(data)
+		console.log(data.Name)
+		console.log(data.Symbol)
+		console.log(data.Description)
+
+		const container = $("#container");
+
+		const companyCard = `
+			<h1>${data.Name}</h1>
+			<h1>${data.Symbol}</h1>
+			<p>${data.Description}<p>
+		`
+
+		container.append(companyCard);
+
 	})
 	.catch(err => {
 		console.error(err)
