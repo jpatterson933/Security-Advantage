@@ -1,4 +1,4 @@
-// our fetch query function
+// our fetch query function for quick company description
 const getCompanyDescription = (dropdownSelection) => {
 	const baseUrl = "https://alpha-vantage.p.rapidapi.com/query?function=OVERVIEW&symbol=";
 	const query = baseUrl + dropdownSelection + "&datatype=json&output_size=compact";
@@ -22,18 +22,19 @@ $("#ticker-choice").on("click", (e) => {
 	})
 	.then(data => {
 		console.log(data)
-		console.log(data.Name)
-		console.log(data.Symbol)
-		console.log(data.Description)
-
+		//our container located in the index.html file
 		const container = $("#container");
-
+		
+		//new html element created for any new companys that are searched
 		const companyCard = `
-			<h1>${data.Name}</h1>
-			<h1>${data.Symbol}</h1>
-			<p>${data.Description}<p>
+		<div id="company-card-wrapper">
+			<h2>${data.Name}</h2>
+			<h3>Ticker Symbol: ${data.Symbol}</h3>
+			<p id="content">${data.Description.slice(0,50)}<span id="more-info"><button id="show-info">...</button>${data.Description.substring(50)}</span></p>
+			<p>Asset Type: 	${data.AssetType}</p>
+			<p>Industry: ${data.Industry} Sector: ${data.Sector}</p>
+		</div>
 		`
-
 		container.append(companyCard);
 
 	})

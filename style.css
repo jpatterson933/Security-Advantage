@@ -1,0 +1,29 @@
+#content {
+    width: 400px;
+    background: #fff;
+    padding: 20px;
+    padding-top: 0;
+    font-size: 18px;
+    color: #444;
+    margin: 0 auto;
+
+    max-height: 270px;
+    overflow: hidden;
+
+    /* set transitions up */
+    -webkit-transition: max-height 0.7s;
+    -moz-transition: max-height 0.7s;
+    transition: max-height 0.7s;
+
+
+}
+
+#content-open {
+    max-height: 1000px;
+
+    -webkit-transition: max-height 0.7s;
+    -moz-transition: max-height 0.7s;
+    transition: max-height 0.7s;
+
+
+}
