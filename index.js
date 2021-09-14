@@ -1,13 +1,17 @@
+function companyNames() {
+	this.list=["company one", "company 2", "company 3"];
+}
+
 
 // fetch for autocomplete data
 fetch('./companyInfo.json')
-                .then(res => res.json())
-                .then(data => {
-					console.log(data)
-                  console.log(data.tickerSymbol[10], data.companyName[10])
-				  
-                })
-                .catch(err => console.error(err));
+	.then(res => res.json())
+	.then(data => {
+		console.log(data)
+		console.log(data.tickerSymbol[10], data.companyName[10])
+
+	})
+	.catch(err => console.error(err));
 
 // our fetch query function for quick company description
 const getCompanyDescription = (dropdownSelection) => {
@@ -27,17 +31,17 @@ $("#ticker-choice").on("click", (e) => {
 	e.preventDefault();
 	const tickerSymbol = $("#ticker").val();
 	getCompanyDescription(tickerSymbol)
-	.then(response => {
-		console.log(response)
-		return response.json();
-	})
-	.then(data => {
-		console.log(data)
-		//our container located in the index.html file
-		const container = $("#container");
-		
-		//new html element created for any new companys that are searched
-		const companyCard = `
+		.then(response => {
+			console.log(response)
+			return response.json();
+		})
+		.then(data => {
+			console.log(data)
+			//our container located in the index.html file
+			const container = $("#container");
+
+			//new html element created for any new companys that are searched
+			const companyCard = `
 		<div id="company-card-wrapper">
 			<h2>${data.Name}</h2>
 			<h3>Ticker Symbol: ${data.Symbol}</h3>
@@ -46,10 +50,10 @@ $("#ticker-choice").on("click", (e) => {
 			<p>Industry: ${data.Industry} Sector: ${data.Sector}</p>
 		</div>
 		`
-		container.append(companyCard);
+			container.append(companyCard);
 
-	})
-	.catch(err => {
-		console.error(err)
-	})
+		})
+		.catch(err => {
+			console.error(err)
+		})
 })

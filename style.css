@@ -27,3 +27,13 @@
 
 
 }
+#cont {
+    padding: 50px;
+    width: 200px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+input {
+    border: 2px solid darkgray;
+}

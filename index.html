@@ -27,6 +27,16 @@
         <option value="GME">GameStop Corp</option>
         <input type="submit" id="ticker-choice">
     </select>
+    <!-- potential autocomplet form -->
+    <div id="cont">
+        Company Name <br>
+        <datalist id="name"></datalist>
+        <input type="text" list="name" name="name" />
+        <br><br>
+        Ticker Symbol <br>
+        <datalist id="ticker"></datalist>
+        <input type="text" list="ticker" name="ticker" />
+    </div>
 
     <!-- This is where are company card info gets appended to -->
     <div id="container">
@@ -38,6 +48,9 @@
     <script src="config.js"></script>
     <script src="index.js"></script>
     <!-- <script src="test.js"></script> -->
+
+
+
 </body>
 
 </html>
