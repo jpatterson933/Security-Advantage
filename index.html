@@ -10,8 +10,9 @@
 </head>
 
 <body>
-    <!-- This dropdown represents the top 10 companies based on value -->
-    <select name="Company Ticker Symbol" id="ticker">
+    <!-- Dropdown of a random selection of companies -->
+    <label for=Company-ticker-symbol>Company Ticker Symbol</label>
+    <select name="Company-ticker-symbol" id="ticker">
         <option value="XOM">Exxon Mobil Corporation</option>
         <option value="GE">General Electric Company</option>
         <option value="MSFT">Microsoft</option>
@@ -23,8 +24,9 @@
         <option value="HBC">HSBC Holdings, plc</option>
         <option value="TM">Toyota Motor Corporation</option>
         <option value="JNJ">JOHNSON & JOHNSON</option>
+        <option value="GME">GameStop Corp</option>
+        <input type="submit" id="ticker-choice">
     </select>
-    <button id="ticker-choice">Show</button>
 
     <!-- This is where are company card info gets appended to -->
     <div id="container">
